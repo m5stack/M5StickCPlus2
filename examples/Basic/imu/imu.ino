@@ -22,7 +22,7 @@ void setup() {
     StickCP2.Display.setRotation(1);
     StickCP2.Display.setTextColor(GREEN);
     StickCP2.Display.setTextDatum(middle_center);
-    StickCP2.Display.setTextFont(&fonts::FreeSansBold9pt7b);
+    StickCP2.Display.setFont(&fonts::FreeSansBold9pt7b);
     StickCP2.Display.setTextSize(1);
 }
 
@@ -35,18 +35,18 @@ void loop(void) {
         auto data = StickCP2.Imu.getImuData();
 
         // The data obtained by getImuData can be used as follows.
-        data.accel.x;      // accel x-axis value.
-        data.accel.y;      // accel y-axis value.
-        data.accel.z;      // accel z-axis value.
-        data.accel.value;  // accel 3values array [0]=x / [1]=y / [2]=z.
+        // data.accel.x;      // accel x-axis value.
+        // data.accel.y;      // accel y-axis value.
+        // data.accel.z;      // accel z-axis value.
+        // data.accel.value;  // accel 3values array [0]=x / [1]=y / [2]=z.
 
-        data.gyro.x;      // gyro x-axis value.
-        data.gyro.y;      // gyro y-axis value.
-        data.gyro.z;      // gyro z-axis value.
-        data.gyro.value;  // gyro 3values array [0]=x / [1]=y / [2]=z.
+        // data.gyro.x;      // gyro x-axis value.
+        // data.gyro.y;      // gyro y-axis value.
+        // data.gyro.z;      // gyro z-axis value.
+        // data.gyro.value;  // gyro 3values array [0]=x / [1]=y / [2]=z.
 
-        data.value;  // all sensor 9values array [0~2]=accel / [3~5]=gyro /
-                     // [6~8]=mag
+        // data.value;  // all sensor 9values array [0~2]=accel / [3~5]=gyro /
+        //              // [6~8]=mag
 
         Serial.printf("ax:%f  ay:%f  az:%f\r\n", data.accel.x, data.accel.y,
                       data.accel.z);
