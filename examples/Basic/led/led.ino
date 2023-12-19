@@ -7,7 +7,7 @@
  *
  *
  * @Hardwares: M5StickCPlus2
- * @Platform Version: Arduino M5Stack Board Manager v2.0.8
+ * @Platform Version: Arduino M5Stack Board Manager v2.0.9
  * @Dependent Library:
  * M5GFX: https://github.com/m5stack/M5GFX
  * M5Unified: https://github.com/m5stack/M5Unified

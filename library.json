@@ -10,7 +10,7 @@
     "type": "git",
     "url": "https://github.com/m5stack/M5StickCPlus2.git"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "frameworks": "arduino",
   "platforms": "espressif32",
   "headers": "M5StickCPlus2.h"

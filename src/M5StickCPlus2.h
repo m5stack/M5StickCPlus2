@@ -13,8 +13,10 @@ class M5StickCPlus2 {
     void begin();
     void begin(m5::M5Unified::config_t cfg);
 
-    M5GFX &Display         = M5.Display;
-    M5GFX &Lcd             = Display;
+    M5GFX &Display = M5.Display;
+    M5GFX &Lcd     = Display;
+
+    IMU_Class &Imu         = M5.Imu;
     Power_Class &Power     = M5.Power;
     RTC8563_Class &Rtc     = M5.Rtc;
     Speaker_Class &Speaker = M5.Speaker;
