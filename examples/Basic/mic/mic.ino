@@ -2,8 +2,8 @@
  * @file mic.ino
  * @author SeanKwok (shaoxiang@m5stack.com)
  * @brief M5StickCPlus2 Microphone Record Test
- * @version 0.1
- * @date 2023-12-19
+ * @version 0.2
+ * @date 2024-01-04
  *
  *
  * @Hardwares: M5StickCPlus2
@@ -50,36 +50,6 @@ void setup(void) {
     /// off the speaker here.
     StickCP2.Speaker.end();
     StickCP2.Mic.begin();
-
-    i2s_config_t i2s_config = {
-        .mode = (i2s_mode_t)(I2S_MODE_MASTER | I2S_MODE_RX | I2S_MODE_PDM),
-        .sample_rate = 44100,
-        .bits_per_sample =
-            I2S_BITS_PER_SAMPLE_16BIT,  // is fixed at 12bit, stereo, MSB
-        .channel_format = I2S_CHANNEL_FMT_ALL_RIGHT,
-#if ESP_IDF_VERSION > ESP_IDF_VERSION_VAL(4, 1, 0)
-        .communication_format =
-            I2S_COMM_FORMAT_STAND_I2S,  // Set the format of the communication.
-#else                                   // 设置通讯格式
-        .communication_format = I2S_COMM_FORMAT_I2S,
-#endif
-        .intr_alloc_flags = ESP_INTR_FLAG_LEVEL1,
-        .dma_buf_count    = 3,
-        .dma_buf_len      = 256,
-    };
-
-    i2s_pin_config_t pin_config;
-#if (ESP_IDF_VERSION > ESP_IDF_VERSION_VAL(4, 3, 0))
-    pin_config.mck_io_num = I2S_PIN_NO_CHANGE;
-#endif
-    pin_config.bck_io_num   = I2S_PIN_NO_CHANGE;
-    pin_config.ws_io_num    = PIN_CLK;
-    pin_config.data_out_num = I2S_PIN_NO_CHANGE;
-    pin_config.data_in_num  = PIN_DATA;
-
-    i2s_driver_install(I2S_NUM_0, &i2s_config, 0, NULL);
-    i2s_set_pin(I2S_NUM_0, &pin_config);
-    i2s_set_clk(I2S_NUM_0, 44100, I2S_BITS_PER_SAMPLE_16BIT, I2S_CHANNEL_MONO);
 
     StickCP2.Display.fillCircle(70, 15, 8, RED);
     StickCP2.Display.drawString("REC", 120, 3);
