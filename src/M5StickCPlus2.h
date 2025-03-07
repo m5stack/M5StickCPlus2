@@ -6,10 +6,10 @@
 
 namespace m5 {
 class M5StickCPlus2 {
-   private:
+private:
     /* data */
 
-   public:
+public:
     void begin();
     void begin(m5::M5Unified::config_t cfg);
 
@@ -21,8 +21,8 @@ class M5StickCPlus2 {
     RTC8563_Class &Rtc     = M5.Rtc;
     Speaker_Class &Speaker = M5.Speaker;
     Mic_Class &Mic         = M5.Mic;
-    Button_Class &BtnA     = M5.BtnA;
-    Button_Class &BtnB     = M5.BtnB;
+    Button_Class &BtnA     = M5.getButton(0);
+    Button_Class &BtnB     = M5.getButton(1);
 
     /// for internal I2C device
     I2C_Class &In_I2C = m5::In_I2C;
