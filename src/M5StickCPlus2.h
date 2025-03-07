@@ -23,6 +23,7 @@ public:
     Mic_Class &Mic         = M5.Mic;
     Button_Class &BtnA     = M5.getButton(0);
     Button_Class &BtnB     = M5.getButton(1);
+    Button_Class &BtnPWR   = M5.getButton(4);
 
     /// for internal I2C device
     I2C_Class &In_I2C = m5::In_I2C;
